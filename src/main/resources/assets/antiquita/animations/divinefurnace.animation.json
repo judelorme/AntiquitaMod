@@ -5,12 +5,12 @@
 			"animation_length": 1,
 			"bones": {
 				"liquide": {
-					"scale": {
+					"position": {
 						"0.0": {
-							"vector": [1, 1, 1]
+							"vector": [0, 0, 0]
 						},
 						"1.0": {
-							"vector": [1, 1.8, 1]
+							"vector": [0, 4.8, 0]
 						}
 					}
 				}
@@ -21,15 +21,15 @@
 			"animation_length": 1,
 			"bones": {
 				"liquide": {
-					"scale": {
+					"position": {
 						"0.0": {
-							"vector": [1, 1.8, 1]
+							"vector": [0, 4.8, 0]
 						},
 						"0.5": {
-							"vector": [1, 1.75, 1]
+							"vector": [0, 4.4, 0]
 						},
 						"1.0": {
-							"vector": [1, 1.8, 1]
+							"vector": [0, 4.8, 0]
 						}
 					}
 				}
@@ -39,12 +39,12 @@
 			"animation_length": 1,
 			"bones": {
 				"liquide": {
-					"scale": {
+					"position": {
 						"0.0": {
-							"vector": [1, 1.8, 1]
+							"vector": [0, 4.8, 0]
 						},
 						"1.0": {
-							"vector": [1, 1, 1]
+							"vector": [0, 0, 0]
 						}
 					}
 				}

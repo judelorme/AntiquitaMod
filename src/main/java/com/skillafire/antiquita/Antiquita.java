@@ -16,6 +16,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import software.bernie.geckolib3.GeckoLib;
 
 @Mod("antiquita")
 public class Antiquita {
@@ -41,6 +42,8 @@ public class Antiquita {
 		bus.addListener(this::clientSetup);
 		
 		MinecraftForge.EVENT_BUS.register(this);
+		
+		GeckoLib.initialize();
 	}
 	
 	private void clientSetup(final FMLClientSetupEvent event) {

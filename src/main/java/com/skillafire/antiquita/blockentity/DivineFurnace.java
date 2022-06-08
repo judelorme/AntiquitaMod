@@ -1,7 +1,11 @@
 package com.skillafire.antiquita.blockentity;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
@@ -11,6 +15,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -19,14 +24,14 @@ public class DivineFurnace extends BaseEntityBlock {
 	public static final Properties props = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GREEN)
 			.strength(1.0f)
 			.sound(SoundType.STONE)
-			.requiresCorrectToolForDrops()
-			.emissiveRendering((state, getter, pos) -> true);
+			.noOcclusion()
+			.requiresCorrectToolForDrops();
 
 	public DivineFurnace() {
 		super(props);
 	}
 
-	private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 8, 16);
+	private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 14, 16);
 	
 	@Override
 	public VoxelShape getShape(BlockState blockState, BlockGetter getter, BlockPos pos,	CollisionContext collisionContext) {
@@ -42,5 +47,23 @@ public class DivineFurnace extends BaseEntityBlock {
 	@Override
 	public RenderShape getRenderShape(BlockState p_49232_) {
 		return RenderShape.ENTITYBLOCK_ANIMATED;
+	}
+	
+	@Override
+	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
+			InteractionHand hand, BlockHitResult result) {
+		
+		if (!level.isClientSide) {
+			BlockEntity blockEntity = level.getBlockEntity(pos);
+			
+			if (blockEntity instanceof DivineFurnaceBlockEntity) {
+				System.out.println("block entity recognized");
+				((DivineFurnaceBlockEntity) blockEntity).PlayAnimation();
+			} else {
+				System.out.println("block entity not recognized");
+			}
+		}
+		
+		return InteractionResult.sidedSuccess(level.isClientSide);
 	}
 }

@@ -16,10 +16,10 @@ public class DivineFurnaceRenderer extends GeoBlockRenderer<DivineFurnaceBlockEn
         super(rendererDispatcherIn, new DivineFurnaceModel());
     }
     
-    @Override
+    /*@Override
     public RenderType getRenderType(DivineFurnaceBlockEntity animatable, float partialTicks, PoseStack stack,
     		MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn,
     		ResourceLocation textureLocation) {
-    	return RenderType.translucent();
-    }
+    	return RenderType.entityTranslucent(textureLocation);
+    }*/
 }
