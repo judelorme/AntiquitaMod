@@ -13,7 +13,6 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraft.world.scores.criteria.ObjectiveCriteria.RenderType;
 
 public class DivineFurnace extends BaseEntityBlock {
 
