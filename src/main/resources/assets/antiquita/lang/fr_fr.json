@@ -1,0 +1,12 @@
+{
+	"itemGroup.antiquita": "Antiquita",
+	
+	"block.antiquita.orichalcum_ore": "Minerai d'Orichalque",
+	"block.antiquita.deepslate_orichalcum_ore": "Minerai d'Orichalque des ab\u00eemes",
+	"block.antiquita.orichalcum_block": "Bloc d'Orichalque",
+	"item.antiquita.orichalcum_ingot": "Lingot d'Orichalque",
+	"item.antiquita.raw_orichalcum_ore": "Minerai d'Orichalque brut",
+
+	"block.antiquita.divine_fire_ore": "Minerai de Feu Divin",
+	"block.antiquita.deepslate_divine_fire_ore": "Minerai de Feu Divin des ab\u00eemes"
+}

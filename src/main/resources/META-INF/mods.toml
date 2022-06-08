@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="MIT"
+[[mods]] #mandatory
+modId="antiquita" #mandatory
+version="${file.jarVersion}" #mandatory
+displayName="Antiquita" #mandatory
+logoFile="examplemod.png" #optional
+credits="A mod by Skillafire" #optional
+authors="Skillafire" #optional
+description='''
+Find the secrets of an ancient era and old gods !
+'''
+# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
+[[dependencies.antiquita]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[40,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.antiquita]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"

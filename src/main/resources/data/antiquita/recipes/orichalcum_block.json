@@ -1,0 +1,17 @@
+{
+	"type": "crafting_shaped",
+	"pattern": [
+		"   ",
+		" A ",
+		"   "
+	],
+	"key": {
+		"A": {
+			"item": "antiquita:orichalcum_block"
+		}
+	},
+	"result": {
+		"item": "antiquita:orichalcum_ingot",
+		"count": 9
+	}
+}

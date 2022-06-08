@@ -1,0 +1,6 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "antiquita:block/deepslate_divine_fire_ore"
+	}
+}

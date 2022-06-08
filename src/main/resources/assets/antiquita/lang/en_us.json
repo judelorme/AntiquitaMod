@@ -1,0 +1,13 @@
+{
+	"itemGroup.antiquita": "Antiquita",
+
+	"block.antiquita.orichalcum_ore": "Orichalcum Ore",
+	"block.antiquita.deepslate_orichalcum_ore": "Deepslate Orichalcum Ore",
+	"block.antiquita.orichalcum_block": "Orichalcum Block",
+	"item.antiquita.orichalcum_ingot": "Orichalcum Ingot",
+	"item.antiquita.raw_orichalcum_ore": "Raw Orichalcum Ore",
+
+	"block.antiquita.divine_fire_ore": "Divine Fire Ore",
+	"block.antiquita.deepslate_divine_fire_ore": "Deepslate Divine Fire Ore"
+	
+}

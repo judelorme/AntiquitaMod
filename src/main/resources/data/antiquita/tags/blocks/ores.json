@@ -1,0 +1,9 @@
+{
+	"replace": false,
+	"values": [
+		"antiquita:divine_fire_ore",
+		"antiquita:deepslate_divine_fire_ore",
+		"antiquita:orichalcum_ore",
+		"antiquita:deepslate_orichalcum_ore"
+	]
+}
