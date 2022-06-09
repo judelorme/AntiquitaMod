@@ -47,6 +47,7 @@ public class BlockInit {
 			() -> new DeepslateDivineFireOre(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
 	
+	
 	public static final RegistryObject<Block> DIVINE_FURNACE = registerWithBlockItem("divine_furnace", 
 			() -> new DivineFurnace(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));

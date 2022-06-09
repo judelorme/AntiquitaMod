@@ -1,6 +1,7 @@
 package com.skillafire.antiquita.blockentity;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -18,9 +19,10 @@ import net.minecraft.world.level.material.MaterialColor;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.network.NetworkHooks;
 
 public class DivineFurnace extends BaseEntityBlock {
-
+	
 	public static final Properties props = BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_GREEN)
 			.strength(1.0f)
 			.sound(SoundType.STONE)
@@ -55,12 +57,19 @@ public class DivineFurnace extends BaseEntityBlock {
 		
 		if (!level.isClientSide) {
 			BlockEntity blockEntity = level.getBlockEntity(pos);
+			if (blockEntity instanceof DivineFurnaceBlockEntity) {
+				NetworkHooks.openGui(((ServerPlayer) player), (DivineFurnaceBlockEntity) blockEntity, pos);
+			} else {
+				throw new IllegalStateException("Our container provider is missing!");
+			}
+		}
+		
+		if (level.isClientSide) {
+			BlockEntity blockEntity = level.getBlockEntity(pos);
 			
 			if (blockEntity instanceof DivineFurnaceBlockEntity) {
-				System.out.println("block entity recognized");
 				((DivineFurnaceBlockEntity) blockEntity).PlayAnimation();
 			} else {
-				System.out.println("block entity not recognized");
 			}
 		}
 		

@@ -8,6 +8,8 @@
 	"item.antiquita.raw_orichalcum_ore": "Raw Orichalcum Ore",
 
 	"block.antiquita.divine_fire_ore": "Divine Fire Ore",
-	"block.antiquita.deepslate_divine_fire_ore": "Deepslate Divine Fire Ore"
+	"block.antiquita.deepslate_divine_fire_ore": "Deepslate Divine Fire Ore",
+	"item.antiquita.divine_fire_powder": "Divine Fire Powder",
 	
+	"block.antiquita.divine_furnace": "Divine Furnace"
 }

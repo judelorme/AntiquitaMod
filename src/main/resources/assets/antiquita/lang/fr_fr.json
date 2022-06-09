@@ -6,7 +6,10 @@
 	"block.antiquita.orichalcum_block": "Bloc d'Orichalque",
 	"item.antiquita.orichalcum_ingot": "Lingot d'Orichalque",
 	"item.antiquita.raw_orichalcum_ore": "Minerai d'Orichalque brut",
-
+	
 	"block.antiquita.divine_fire_ore": "Minerai de Feu Divin",
-	"block.antiquita.deepslate_divine_fire_ore": "Minerai de Feu Divin des ab\u00eemes"
+	"block.antiquita.deepslate_divine_fire_ore": "Minerai de Feu Divin des ab\u00eemes",
+	"item.antiquita.divine_fire_powder": "Poudre de Feu Divin",
+	
+	"block.antiquita.divine_furnace": "Fourneau Divin"
 }

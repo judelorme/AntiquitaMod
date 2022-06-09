@@ -3,7 +3,11 @@ package com.skillafire.antiquita;
 import com.skillafire.antiquita.init.BlockEntityInit;
 import com.skillafire.antiquita.init.BlockInit;
 import com.skillafire.antiquita.init.ItemInit;
+import com.skillafire.antiquita.init.MenuTypesInit;
+import com.skillafire.antiquita.init.RecipeInit;
+import com.skillafire.antiquita.screen.DivineFurnaceScreen;
 
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTab;
@@ -37,6 +41,8 @@ public class Antiquita {
 		ItemInit.register(bus);
 		BlockInit.register(bus);
 		BlockEntityInit.register(bus);
+		MenuTypesInit.register(bus);
+		RecipeInit.register(bus);
 
 		bus.addListener(this::setup);
 		bus.addListener(this::clientSetup);
@@ -56,11 +62,12 @@ public class Antiquita {
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.SKY_TREE_SAPLING.get(), RenderType.cutout());*/
 		
 		// Entities
-		ItemBlockRenderTypes.setRenderLayer(BlockInit.DIVINE_FURNACE.get(), RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.DIVINE_FURNACE.get(), RenderType.cutout());
+		/*ItemBlockRenderTypes.setRenderLayer(ItemInit.ITEMS.getEntries()., RenderType.translucent());*/
 		
 		// Menus
-		/*MenuScreens.register(MenuTypesInit.WORKTABLE_MENU.get(), WorktableScreen::new);
-		MenuScreens.register(MenuTypesInit.SKY_FURNACE_MENU.get(), SkyFurnaceScreen::new);*/
+		MenuScreens.register(MenuTypesInit.DIVINE_FURNACE_MENU.get(), DivineFurnaceScreen::new);
+		/*MenuScreens.register(MenuTypesInit.SKY_FURNACE_MENU.get(), SkyFurnaceScreen::new);*/
 		
 		// Living Entities
 		/*EntityRenderers.register(EntityInit.ALIEN.get(), AlienRenderer::new);*/

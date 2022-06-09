@@ -1,0 +1,16 @@
+{
+	"type": "crafting_shaped",
+	"pattern": [
+		"A A",
+		"AAA",
+		" A "
+	],
+	"key": {
+		"A": {
+			"item": "antiquita:orichalcum_block"
+		}
+	},
+	"result": {
+		"item": "antiquita:divine_furnace"
+	}
+}
