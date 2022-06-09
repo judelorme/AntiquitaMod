@@ -1,5 +1,8 @@
 package com.skillafire.antiquita.recipe;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.Nullable;
 
 import com.google.gson.JsonArray;
@@ -33,11 +36,23 @@ public class DivineFurnaceRecipe implements Recipe<SimpleContainer> {
 	
 	@Override
 	public boolean matches(SimpleContainer container, Level level) {
+		List<Ingredient> stillPresent = new ArrayList<Ingredient>();
+		
 		for (int i = 0; i < recipeItems.size(); i++) {
-			if (!recipeItems.get(i).test(container.getItem(i)))
-				return false;
+			stillPresent.add(recipeItems.get(i));
 		}
-		return true;
+		
+		for (int j = 0; j < stillPresent.size(); j++) {
+			for (int i = 0; i < DivineFurnaceBlockEntity.OUTPUT_SLOT_NUMBER; i++) {
+				if (stillPresent.get(j).test(container.getItem(i))) {
+					stillPresent.remove(j);
+					j--;
+					break;
+				}
+			}
+		}
+		
+		return stillPresent.isEmpty();
 	}
 
 	@Override
