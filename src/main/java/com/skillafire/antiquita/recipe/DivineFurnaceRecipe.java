@@ -42,11 +42,10 @@ public class DivineFurnaceRecipe implements Recipe<SimpleContainer> {
 			stillPresent.add(recipeItems.get(i));
 		}
 		
-		for (int j = 0; j < stillPresent.size(); j++) {
+		for (int j = 0; j < recipeItems.size(); j++) {
 			for (int i = 0; i < DivineFurnaceBlockEntity.OUTPUT_SLOT_NUMBER; i++) {
-				if (stillPresent.get(j).test(container.getItem(i))) {
-					stillPresent.remove(j);
-					j--;
+				if (recipeItems.get(j).test(container.getItem(i))) {
+					stillPresent.remove(recipeItems.get(j));
 					break;
 				}
 			}
