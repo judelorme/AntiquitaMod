@@ -1,0 +1,22 @@
+{
+	"type": "crafting_shaped",
+	"pattern": [
+		"A A",
+		"ABA",
+		"ACA"
+	],
+	"key": {
+		"A": {
+			"item": "minecraft:stone"
+		},
+		"B": {
+			"item": "minecraft:magma_block"
+		},
+		"C": {
+			"item": "antiquita:terrestrum_alloy_block"
+		}
+	},
+	"result": {
+		"item": "antiquita:divine_smeltery"
+	}
+}
