@@ -7,11 +7,11 @@
 	],
 	"key": {
 		"A": {
-			"item": "antiquita:orichalcum_ingot"
+			"item": "antiquita:terrestrum_alloy_ingot"
 		}
 	},
 	"result": {
-		"item": "antiquita:orichalcum_block",
+		"item": "antiquita:terrestrum_alloy_block",
 		"count": 1
 	}
 }

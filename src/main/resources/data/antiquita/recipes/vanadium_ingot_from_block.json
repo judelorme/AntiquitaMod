@@ -7,11 +7,11 @@
 	],
 	"key": {
 		"A": {
-			"item": "antiquita:orichalcum_block"
+			"item": "antiquita:vanadium_block"
 		}
 	},
 	"result": {
-		"item": "antiquita:orichalcum_ingot",
+		"item": "antiquita:vanadium_ingot",
 		"count": 9
 	}
 }

@@ -1,5 +1,7 @@
 package com.skillafire.antiquita.blockentity;
 
+import com.skillafire.antiquita.init.BlockEntityInit;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -12,6 +14,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
@@ -54,7 +58,6 @@ public class DivineFurnace extends BaseEntityBlock {
 	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
 			InteractionHand hand, BlockHitResult result) {
-		
 		if (!level.isClientSide) {
 			BlockEntity blockEntity = level.getBlockEntity(pos);
 			if (blockEntity instanceof DivineFurnaceBlockEntity) {
@@ -64,15 +67,12 @@ public class DivineFurnace extends BaseEntityBlock {
 			}
 		}
 		
-		if (level.isClientSide) {
-			BlockEntity blockEntity = level.getBlockEntity(pos);
-			
-			if (blockEntity instanceof DivineFurnaceBlockEntity) {
-				((DivineFurnaceBlockEntity) blockEntity).PlayAnimation();
-			} else {
-			}
-		}
-		
 		return InteractionResult.sidedSuccess(level.isClientSide);
+	}
+	
+	@Override
+	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState blockState,
+			BlockEntityType<T> blockEntityType) {
+		return createTickerHelper(blockEntityType, BlockEntityInit.DIVINE_FURNACE_BLOCK_ENTITY.get(), DivineFurnaceBlockEntity::tick);
 	}
 }

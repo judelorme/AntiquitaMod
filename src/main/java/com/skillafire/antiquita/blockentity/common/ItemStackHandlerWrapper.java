@@ -62,8 +62,6 @@ public class ItemStackHandlerWrapper implements IItemHandler, IItemHandlerModifi
 	@Override
     public CompoundTag serializeNBT()
     {
-        System.out.println("Serializing NBT...");
-        
         ListTag nbtTagList = new ListTag();
         for (int i = 0; i < stacks.size(); i++)
         {
@@ -79,17 +77,12 @@ public class ItemStackHandlerWrapper implements IItemHandler, IItemHandlerModifi
         nbt.put("Items", nbtTagList);
         nbt.putInt("Size", stacks.size());
         
-        System.out.println("NBT output : " + nbt.getAsString());
-        
-        System.out.println("Serializing NBT done !");
-        
         return nbt;
     }
 
     @Override
     public void deserializeNBT(CompoundTag nbt)
     {
-    	System.out.println("Deserializing NBT...");
         setSize(nbt.contains("Size", Tag.TAG_INT) ? nbt.getInt("Size") : stacks.size());
         ListTag tagList = nbt.getList("Items", Tag.TAG_COMPOUND);
         for (int i = 0; i < tagList.size(); i++)
@@ -100,10 +93,8 @@ public class ItemStackHandlerWrapper implements IItemHandler, IItemHandlerModifi
             if (slot >= 0 && slot < stacks.size())
             {
                 stacks.set(slot, ItemStack.of(itemTags));
-                System.out.println("Inserting " + stacks.get(slot).getDisplayName().getString() + " in slot " + slot);
             }
         }
-        System.out.println("Deserializing NBT done !");
         
         onLoad();
     }

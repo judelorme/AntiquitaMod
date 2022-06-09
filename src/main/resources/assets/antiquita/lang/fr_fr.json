@@ -7,6 +7,15 @@
 	"item.antiquita.orichalcum_ingot": "Lingot d'Orichalque",
 	"item.antiquita.raw_orichalcum_ore": "Minerai d'Orichalque brut",
 	
+	"block.antiquita.vanadium_ore": "Minerai de Vanadium",
+	"block.antiquita.deepslate_vanadium_ore": "Minerai de Vanadium des ab\u00eemes",
+	"block.antiquita.vanadium_block": "Bloc de Vanadium",
+	"item.antiquita.vanadium_ingot": "Lingot de Vanadium",
+	"item.antiquita.raw_vanadium_ore": "Minerai de Vanadium brut",
+	
+	"block.antiquita.terrestrum_alloy_block": "Bloc d'alliage de Terrestrum",
+	"item.antiquita.terrestrum_alloy_ingot": "Lingot d'alliage de Terrestrum",
+	
 	"block.antiquita.divine_fire_ore": "Minerai de Feu Divin",
 	"block.antiquita.deepslate_divine_fire_ore": "Minerai de Feu Divin des ab\u00eemes",
 	"item.antiquita.divine_fire_powder": "Poudre de Feu Divin",

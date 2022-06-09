@@ -50,6 +50,7 @@ public class DivineFurnaceBlockEntity extends BlockEntity implements IAnimatable
 	public static final String TAG_PROGRESS = "divine_furnace.progress";
 	public static final String TAG_MAX_PROGRESS = "divine_furnace.max_progress";
 	public static final String TAG_INVENTORY = "divine_furnace.inventory";
+	public static final String TAG_CURRENT_ANIMATION_STATE = "divine_furnace.current_animation_state";
 
 	protected final ContainerData data;
 	private int progress = 0;
@@ -110,19 +111,22 @@ public class DivineFurnaceBlockEntity extends BlockEntity implements IAnimatable
 		ItemStack outputItem = hasRecipe(blockEntity);
 
 		if (outputItem != null) {
+			if (blockEntity.currentState == 0) {
+				blockEntity.currentState = 1;
+			}	
 			blockEntity.progress++;
 			setChanged(level, pos, blockState);
 
 			if (blockEntity.progress > blockEntity.maxProgress) {
-				if (!level.isClientSide) {
-					craftItem(blockEntity, outputItem);
-				}
+				craftItem(blockEntity, outputItem);
 			}
 		} else {
+			if (blockEntity.currentState == 1) {
+				blockEntity.currentState = 2;
+			}
 			blockEntity.resetProgress();
 			setChanged(level, pos, blockState);
 		}
-
 	}
 	
 	private static ItemStack hasRecipe(DivineFurnaceBlockEntity blockEntity) {
@@ -135,7 +139,7 @@ public class DivineFurnaceBlockEntity extends BlockEntity implements IAnimatable
 
 		Optional<DivineFurnaceRecipe> match = level.getRecipeManager()
 				.getRecipeFor(DivineFurnaceRecipe.DivineFurnaceRecipeType.INSTANCE, inventory, level);
-
+		
 		if (match.isPresent()
 				&& canInsertAmountIntoOutputSlot(inventory, match.get().getResultItem())
 				&& canInsertItemIntoOutputSlot(inventory, match.get().getResultItem())) {
@@ -172,9 +176,6 @@ public class DivineFurnaceBlockEntity extends BlockEntity implements IAnimatable
 	}
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-		if (this.currentState == 0 && event.getController().getCurrentAnimation() != null) {
-		}
-
 		if (this.currentState == 1 && !this.hasFilled) {
 			event.getController()
 					.setAnimation(new AnimationBuilder().addAnimation("animation.divinefurnace.fill", false));
@@ -204,15 +205,6 @@ public class DivineFurnaceBlockEntity extends BlockEntity implements IAnimatable
 		return this.factory;
 	}
 
-	public void PlayAnimation() {
-		if (this.currentState == 0)
-			this.currentState = 1;
-		else if (this.currentState == 1)
-			this.currentState = 2;
-		else if (this.currentState == 2)
-			this.currentState = 0;
-	}
-
 	@Nonnull
 	@Override
 	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @javax.annotation.Nullable Direction side) {
@@ -239,6 +231,7 @@ public class DivineFurnaceBlockEntity extends BlockEntity implements IAnimatable
 	protected void saveAdditional(CompoundTag tag) {
 		tag.putInt(TAG_PROGRESS, progress);
 		tag.putInt(TAG_MAX_PROGRESS, maxProgress);
+		tag.putInt(TAG_CURRENT_ANIMATION_STATE, currentState);
 		tag.put(TAG_INVENTORY, capabilityWrapper.serializeNBT());
 
 		super.saveAdditional(tag);
@@ -249,6 +242,7 @@ public class DivineFurnaceBlockEntity extends BlockEntity implements IAnimatable
 		CompoundTag tag = new CompoundTag();
 		tag.putInt(TAG_PROGRESS, progress);
 		tag.putInt(TAG_MAX_PROGRESS, maxProgress);
+		tag.putInt(TAG_CURRENT_ANIMATION_STATE, currentState);
 		tag.put(TAG_INVENTORY, capabilityWrapper.serializeNBT());
 
 		return tag;
@@ -261,6 +255,7 @@ public class DivineFurnaceBlockEntity extends BlockEntity implements IAnimatable
 		capabilityWrapper.deserializeNBT(tag.getCompound(TAG_INVENTORY));
 		progress = tag.getInt(TAG_PROGRESS);
 		maxProgress = tag.getInt(TAG_MAX_PROGRESS);
+		currentState = tag.getInt(TAG_CURRENT_ANIMATION_STATE);
 	}
 	
 	@Override

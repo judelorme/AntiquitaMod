@@ -22,6 +22,11 @@ public class ItemInit {
 	public static final RegistryObject<Item> RAW_ORICHALCUM_ORE = register("raw_orichalcum_ore", () -> new Item(new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
 	public static final RegistryObject<Item> ORICHALCUM_INGOT = register("orichalcum_ingot", () -> new Item(new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
 	
+	public static final RegistryObject<Item> RAW_VANADIUM_ORE = register("raw_vanadium_ore", () -> new Item(new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
+	public static final RegistryObject<Item> VANADIUM_INGOT = register("vanadium_ingot", () -> new Item(new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
+
+	public static final RegistryObject<Item> TERRESTRUM_ALLOY_INGOT = register("terrestrum_alloy_ingot", () -> new Item(new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
+	
 	public static final RegistryObject<Item> DIVINE_FIRE_POWDER = register("divine_fire_powder", () -> new Item(new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
 
 	// Tools

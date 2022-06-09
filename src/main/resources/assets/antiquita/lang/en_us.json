@@ -7,6 +7,15 @@
 	"item.antiquita.orichalcum_ingot": "Orichalcum Ingot",
 	"item.antiquita.raw_orichalcum_ore": "Raw Orichalcum Ore",
 
+	"block.antiquita.vanadium_ore": "Vanadium Ore",
+	"block.antiquita.deepslate_vanadium_ore": "Deepslate Vanadium Ore",
+	"block.antiquita.vanadium_block": "Vanadium Block",
+	"item.antiquita.vanadium_ingot": "Vanadium Ingot",
+	"item.antiquita.raw_vanadium_ore": "Raw Vanadium Ore",
+
+	"block.antiquita.terrestrum_alloy_block": "Terrestrum Alloy Block",
+	"item.antiquita.terrestrum_alloy_ingot": "Terrestrum Alloy Ingot",
+	
 	"block.antiquita.divine_fire_ore": "Divine Fire Ore",
 	"block.antiquita.deepslate_divine_fire_ore": "Deepslate Divine Fire Ore",
 	"item.antiquita.divine_fire_powder": "Divine Fire Powder",

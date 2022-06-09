@@ -2,6 +2,7 @@ package com.skillafire.antiquita.world.feature;
 
 import com.skillafire.antiquita.block.DivineFireOre;
 import com.skillafire.antiquita.block.OrichalcumOre;
+import com.skillafire.antiquita.block.VanadiumOre;
 
 import net.minecraft.core.Holder;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
@@ -16,6 +17,11 @@ public class ModPlacedFeatures {
 			ModConfiguredFeatures.ORICHALCUM_ORE,
 			ModOrePlacement.commonOrePlacement(OrichalcumOre.AMOUNT_PER_CHUNK, 
 					HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(OrichalcumOre.MIN_HEIGHT), VerticalAnchor.aboveBottom(OrichalcumOre.MAX_HEIGHT))));
+	
+	public static final Holder<PlacedFeature> VANADIUM_ORE_PLACED = PlacementUtils.register("vanadium_ore_placed", 
+			ModConfiguredFeatures.VANADIUM_ORE,
+			ModOrePlacement.commonOrePlacement(VanadiumOre.AMOUNT_PER_CHUNK, 
+					HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(VanadiumOre.MIN_HEIGHT), VerticalAnchor.aboveBottom(VanadiumOre.MAX_HEIGHT))));
 	
 	public static final Holder<PlacedFeature> DIVINE_FIRE_ORE_PLACED = PlacementUtils.register("divine_fire_ore_placed", 
 			ModConfiguredFeatures.DIVINE_FIRE_ORE,

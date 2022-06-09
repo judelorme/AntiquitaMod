@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.skillafire.antiquita.block.DivineFireOre;
 import com.skillafire.antiquita.block.OrichalcumOre;
+import com.skillafire.antiquita.block.VanadiumOre;
 import com.skillafire.antiquita.init.BlockInit;
 
 import net.minecraft.core.Holder;
@@ -22,6 +23,13 @@ public class ModConfiguredFeatures {
 					OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_ORICHALCUM_ORE.get().defaultBlockState()));
 	
 	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> ORICHALCUM_ORE = FeatureUtils.register("ore_orichalcum", Feature.ORE, new OreConfiguration(OVERWORLD_ORICHALCUM_ORES, OrichalcumOre.AMOUNT_PER_VEIN));
+	
+	public static final List<OreConfiguration.TargetBlockState> OVERWORLD_VANADIUM_ORES = 
+			List.of(
+					OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockInit.VANADIUM_ORE.get().defaultBlockState()),
+					OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockInit.DEEPSLATE_VANADIUM_ORE.get().defaultBlockState()));
+	
+	public static final Holder<ConfiguredFeature<OreConfiguration, ?>> VANADIUM_ORE = FeatureUtils.register("ore_vanadium", Feature.ORE, new OreConfiguration(OVERWORLD_VANADIUM_ORES, VanadiumOre.AMOUNT_PER_VEIN));
 	
 	public static final List<OreConfiguration.TargetBlockState> OVERWORLD_DIVINE_FIRE_ORES = 
 			List.of(

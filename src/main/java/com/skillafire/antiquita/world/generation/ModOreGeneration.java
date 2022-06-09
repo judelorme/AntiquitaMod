@@ -14,6 +14,7 @@ public class ModOreGeneration {
 		List<Holder<PlacedFeature>> base = event.getGeneration().getFeatures(GenerationStep.Decoration.UNDERGROUND_ORES);
 		
 		base.add(ModPlacedFeatures.ORICHALCUM_ORE_PLACED);
+		base.add(ModPlacedFeatures.VANADIUM_ORE_PLACED);
 		base.add(ModPlacedFeatures.DIVINE_FIRE_ORE_PLACED);
 	}
 }

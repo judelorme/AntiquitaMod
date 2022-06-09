@@ -1,0 +1,14 @@
+{
+	"type": "antiquita:divine_furnace_recipes",
+	"ingredients": [
+		{
+			"item": "antiquita:orichalcum_ingot"
+		},
+		{
+			"item": "antiquita:vanadium_ingot"
+		}
+	],
+	"output": {
+		"item": "antiquita:terrestrum_alloy_ingot"
+	}
+}

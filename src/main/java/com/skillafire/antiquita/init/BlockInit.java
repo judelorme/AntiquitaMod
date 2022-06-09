@@ -6,8 +6,10 @@ import com.google.common.base.Supplier;
 import com.skillafire.antiquita.Antiquita;
 import com.skillafire.antiquita.block.DeepslateDivineFireOre;
 import com.skillafire.antiquita.block.DeepslateOrichalcumOre;
+import com.skillafire.antiquita.block.DeepslateVanadiumOre;
 import com.skillafire.antiquita.block.DivineFireOre;
 import com.skillafire.antiquita.block.OrichalcumOre;
+import com.skillafire.antiquita.block.VanadiumOre;
 import com.skillafire.antiquita.blockentity.DivineFurnace;
 
 import net.minecraft.world.item.BlockItem;
@@ -37,7 +39,21 @@ public class BlockInit {
 			() -> new Block(Properties.copy(Blocks.GOLD_BLOCK)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
 	
+	/* --------------------------------- */
 	
+	public static final RegistryObject<Block> VANADIUM_ORE = registerWithBlockItem("vanadium_ore", 
+			() -> new VanadiumOre(), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
+	
+	public static final RegistryObject<Block> DEEPSLATE_VANADIUM_ORE = registerWithBlockItem("deepslate_vanadium_ore", 
+			() -> new DeepslateVanadiumOre(), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
+	
+	public static final RegistryObject<Block> VANADIUM_BLOCK = registerWithBlockItem("vanadium_block", 
+			() -> new Block(Properties.copy(Blocks.GOLD_BLOCK)), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
+	
+	/* --------------------------------- */
 	
 	public static final RegistryObject<Block> DIVINE_FIRE_ORE = registerWithBlockItem("divine_fire_ore", 
 			() -> new DivineFireOre(), 
@@ -50,6 +66,12 @@ public class BlockInit {
 	
 	public static final RegistryObject<Block> DIVINE_FURNACE = registerWithBlockItem("divine_furnace", 
 			() -> new DivineFurnace(), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
+	
+	/* --------------------------------- */
+	
+	public static final RegistryObject<Block> TERRESTRUM_ALLOY_BLOCK = registerWithBlockItem("terrestrum_alloy_block", 
+			() -> new Block(Properties.copy(Blocks.GOLD_BLOCK)), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
 	
 	/*public static final RegistryObject<Block> KAMACITE_ORE = registerWithBlockItem("kamacite_ore", 

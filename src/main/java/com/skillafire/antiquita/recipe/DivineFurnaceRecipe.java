@@ -5,6 +5,7 @@ import javax.annotation.Nullable;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.skillafire.antiquita.Antiquita;
+import com.skillafire.antiquita.blockentity.DivineFurnaceBlockEntity;
 
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
@@ -91,7 +92,7 @@ public class DivineFurnaceRecipe implements Recipe<SimpleContainer> {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "output"));
 
             JsonArray ingredients = GsonHelper.getAsJsonArray(json, "ingredients");
-            NonNullList<Ingredient> inputs = NonNullList.withSize(1, Ingredient.EMPTY);
+            NonNullList<Ingredient> inputs = NonNullList.withSize(DivineFurnaceBlockEntity.OUTPUT_SLOT_NUMBER, Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));

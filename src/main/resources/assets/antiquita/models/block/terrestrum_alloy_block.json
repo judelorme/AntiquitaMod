@@ -1,0 +1,6 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "antiquita:block/terrestrum_alloy_block"
+	}
+}
