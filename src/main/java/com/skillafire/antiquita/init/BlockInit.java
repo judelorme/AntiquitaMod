@@ -10,7 +10,9 @@ import com.skillafire.antiquita.block.DeepslateVanadiumOre;
 import com.skillafire.antiquita.block.DivineFireOre;
 import com.skillafire.antiquita.block.OrichalcumOre;
 import com.skillafire.antiquita.block.VanadiumOre;
+import com.skillafire.antiquita.blockentity.DivineAnvil;
 import com.skillafire.antiquita.blockentity.DivineFurnace;
+import com.skillafire.antiquita.blockentity.DivineSmeltery;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -61,11 +63,6 @@ public class BlockInit {
 	
 	public static final RegistryObject<Block> DEEPSLATE_DIVINE_FIRE_ORE = registerWithBlockItem("deepslate_divine_fire_ore", 
 			() -> new DeepslateDivineFireOre(), 
-			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
-	
-	
-	public static final RegistryObject<Block> DIVINE_FURNACE = registerWithBlockItem("divine_furnace", 
-			() -> new DivineFurnace(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
 	
 	/* --------------------------------- */
@@ -148,11 +145,19 @@ public class BlockInit {
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));*/
 	
 	// Entities
-	/*public static final RegistryObject<Block> WORKTABLE = registerWithBlockItem("worktable", 
-			() -> new Worktable(), 
+	public static final RegistryObject<Block> DIVINE_FURNACE = registerWithBlockItem("divine_furnace", 
+			() -> new DivineFurnace(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
 	
-	public static final RegistryObject<Block> SKY_FURNACE = registerWithBlockItem("sky_furnace", 
+	public static final RegistryObject<Block> DIVINE_ANVIL = registerWithBlockItem("divine_anvil", 
+			() -> new DivineAnvil(), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
+
+	public static final RegistryObject<Block> DIVINE_SMELTERY = registerWithBlockItem("divine_smeltery", 
+			() -> new DivineSmeltery(), 
+			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
+	
+	/*public static final RegistryObject<Block> SKY_FURNACE = registerWithBlockItem("sky_furnace", 
 			() -> new SkyFurnace(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));*/
 	

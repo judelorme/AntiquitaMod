@@ -29,6 +29,8 @@ public class ItemInit {
 	
 	public static final RegistryObject<Item> DIVINE_FIRE_POWDER = register("divine_fire_powder", () -> new Item(new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
 
+	public static final RegistryObject<Item> DIVINE_BOOSTER_TIER_1 = register("divine_booster_tier_1", () -> new Item(new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
+	public static final RegistryObject<Item> DIVINE_BOOSTER_TIER_2 = register("divine_booster_tier_2", () -> new Item(new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
 	// Tools
 	/*public static final RegistryObject<PickaxeItem> KAMACITE_PICKAXE = register("kamacite_pickaxe", () -> new PickaxeItem(TierInit.KAMACITE, 0, 0f, new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
 	public static final RegistryObject<AxeItem> KAMACITE_AXE = register("kamacite_axe", () -> new AxeItem(TierInit.KAMACITE, 0, 0f, new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));

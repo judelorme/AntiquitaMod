@@ -1,0 +1,12 @@
+{
+	"type": "antiquita:divine_smeltery_recipes",
+	"ingredients": [
+		{
+			"item": "minecraft:raw_iron"
+		}
+	],
+	"output": {
+		"item": "minecraft:iron_ingot",
+		"count": 1
+	}
+}

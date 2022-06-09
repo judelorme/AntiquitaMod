@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=north": {
+			"model": "antiquita:block/divine_anvil"
+		},
+		"facing=east": {
+			"model": "antiquita:block/divine_anvil",
+			"y": 90
+		},
+		"facing=south": {
+			"model": "antiquita:block/divine_anvil",
+			"y": 180
+		},
+		"facing=west": {
+			"model": "antiquita:block/divine_anvil",
+			"y": 270
+		}
+	}
+}

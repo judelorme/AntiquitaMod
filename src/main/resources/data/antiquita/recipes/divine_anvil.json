@@ -1,0 +1,22 @@
+{
+	"type": "crafting_shaped",
+	"pattern": [
+		"CAC",
+		" B ",
+		"BBB"
+	],
+	"key": {
+		"A": {
+			"item": "minecraft:redstone_block"
+		},
+		"B": {
+			"item": "antiquita:terrestrum_alloy_block"
+		},
+		"C": {
+			"item": "minecraft:gold_ingot"
+		}
+	},
+	"result": {
+		"item": "antiquita:divine_anvil"
+	}
+}

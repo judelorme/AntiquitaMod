@@ -20,5 +20,10 @@
 	"block.antiquita.deepslate_divine_fire_ore": "Minerai de Feu Divin des ab\u00eemes",
 	"item.antiquita.divine_fire_powder": "Poudre de Feu Divin",
 	
-	"block.antiquita.divine_furnace": "Fourneau Divin"
+	"block.antiquita.divine_furnace": "Fourneau Divin",
+	"block.antiquita.divine_anvil": "Enclume Divine",
+	"block.antiquita.divine_smeltery": "Fonderie Divine",
+	
+	"item.antiquita.divine_booster_tier_1": "Augmentation Divine I",	
+	"item.antiquita.divine_booster_tier_2": "Augmentation Divine II"
 }

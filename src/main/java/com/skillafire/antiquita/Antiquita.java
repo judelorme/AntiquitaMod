@@ -5,7 +5,9 @@ import com.skillafire.antiquita.init.BlockInit;
 import com.skillafire.antiquita.init.ItemInit;
 import com.skillafire.antiquita.init.MenuTypesInit;
 import com.skillafire.antiquita.init.RecipeInit;
+import com.skillafire.antiquita.screen.DivineAnvilScreen;
 import com.skillafire.antiquita.screen.DivineFurnaceScreen;
+import com.skillafire.antiquita.screen.DivineSmelteryScreen;
 
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -67,6 +69,8 @@ public class Antiquita {
 		
 		// Menus
 		MenuScreens.register(MenuTypesInit.DIVINE_FURNACE_MENU.get(), DivineFurnaceScreen::new);
+		MenuScreens.register(MenuTypesInit.DIVINE_ANVIL_MENU.get(), DivineAnvilScreen::new);
+		MenuScreens.register(MenuTypesInit.DIVINE_SMELTERY_MENU.get(), DivineSmelteryScreen::new);
 		/*MenuScreens.register(MenuTypesInit.SKY_FURNACE_MENU.get(), SkyFurnaceScreen::new);*/
 		
 		// Living Entities

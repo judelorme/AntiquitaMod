@@ -20,5 +20,10 @@
 	"block.antiquita.deepslate_divine_fire_ore": "Deepslate Divine Fire Ore",
 	"item.antiquita.divine_fire_powder": "Divine Fire Powder",
 	
-	"block.antiquita.divine_furnace": "Divine Furnace"
+	"block.antiquita.divine_furnace": "Divine Furnace",
+	"block.antiquita.divine_anvil": "Divine Anvil",
+	"block.antiquita.divine_smeltery": "Divine Smeltery",
+	
+	"item.antiquita.divine_booster_tier_1": "Divine Booster I",
+	"item.antiquita.divine_booster_tier_2": "Divine Booster II"
 }

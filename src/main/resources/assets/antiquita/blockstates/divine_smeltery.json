@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=north": {
+			"model": "antiquita:block/divine_smeltery"
+		},
+		"facing=east": {
+			"model": "antiquita:block/divine_smeltery",
+			"y": 90
+		},
+		"facing=south": {
+			"model": "antiquita:block/divine_smeltery",
+			"y": 180
+		},
+		"facing=west": {
+			"model": "antiquita:block/divine_smeltery",
+			"y": 270
+		}
+	}
+}
