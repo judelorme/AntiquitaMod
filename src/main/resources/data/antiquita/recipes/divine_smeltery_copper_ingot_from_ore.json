@@ -1,0 +1,12 @@
+{
+	"type": "antiquita:divine_smeltery_recipes",
+	"ingredients": [
+		{
+			"item": "minecraft:copper_ore"
+		}
+	],
+	"output": {
+		"item": "minecraft:copper_ingot",
+		"count": 2
+	}
+}

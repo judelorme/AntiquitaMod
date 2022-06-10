@@ -1,0 +1,12 @@
+{
+	"type": "antiquita:divine_smeltery_recipes",
+	"ingredients": [
+		{
+			"item": "minecraft:raw_gold"
+		}
+	],
+	"output": {
+		"item": "minecraft:gold_ingot",
+		"count": 1
+	}
+}

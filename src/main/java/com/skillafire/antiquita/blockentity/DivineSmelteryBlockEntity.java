@@ -158,7 +158,7 @@ public class DivineSmelteryBlockEntity extends BlockEntity implements MenuProvid
 	
 	public static void tick(Level level, BlockPos pos, BlockState blockState, DivineSmelteryBlockEntity blockEntity) {
 		if (!level.isClientSide) {
-			Item outputItem = hasRecipe(blockEntity);
+			ItemStack outputItem = hasRecipe(blockEntity);
 			if (outputItem != null) {
 				blockEntity.progress++;
 				setChanged(level, pos, blockState);
@@ -172,7 +172,7 @@ public class DivineSmelteryBlockEntity extends BlockEntity implements MenuProvid
 		}
 	}
 		
-	private static void craftItem(DivineSmelteryBlockEntity blockEntity, Item outputItem) {
+	private static void craftItem(DivineSmelteryBlockEntity blockEntity, ItemStack outputItem) {
 		SimpleContainer inventory = new SimpleContainer(blockEntity.capabilityWrapper.getSlots());
 		for (int i = 0; i < blockEntity.capabilityWrapper.getSlots(); i++) {
 			inventory.setItem(i, blockEntity.capabilityWrapper.getStackInSlot(i));
@@ -181,13 +181,11 @@ public class DivineSmelteryBlockEntity extends BlockEntity implements MenuProvid
 		blockEntity.capabilityWrapper.extractItem(0, 1, false);
 		blockEntity.capabilityWrapper.extractItem(1, 1, false);
 		
-		System.out.println("Crafted '" + (1 + DivineSmelteryBlockEntity.getBoostedOutputAmount(inventory.getItem(2))) + "'" + outputItem.asItem().toString() + " in slot " + OUTPUT_SLOT_NUMBER + ". (booster : " + inventory.getItem(2).toString() + ")");
-		
-		blockEntity.capabilityWrapper.setStackInSlot(OUTPUT_SLOT_NUMBER, new ItemStack(outputItem, blockEntity.capabilityWrapper.getStackInSlot(OUTPUT_SLOT_NUMBER).getCount() + 1 + DivineSmelteryBlockEntity.getBoostedOutputAmount(inventory.getItem(2))));
+		blockEntity.capabilityWrapper.setStackInSlot(OUTPUT_SLOT_NUMBER, new ItemStack(outputItem.getItem(), blockEntity.capabilityWrapper.getStackInSlot(OUTPUT_SLOT_NUMBER).getCount() + outputItem.getCount() * DivineSmelteryBlockEntity.getBoostedOutputAmount(inventory.getItem(2))));
 		blockEntity.resetProgress();
 	}
 	
-	private static Item hasRecipe(DivineSmelteryBlockEntity blockEntity) {
+	private static ItemStack hasRecipe(DivineSmelteryBlockEntity blockEntity) {
 		Level level = blockEntity.level;
 		
 		SimpleContainer inventory = new SimpleContainer(blockEntity.capabilityWrapper.getSlots());
@@ -197,8 +195,8 @@ public class DivineSmelteryBlockEntity extends BlockEntity implements MenuProvid
 		
 		Optional<DivineSmelteryRecipe> match = level.getRecipeManager().getRecipeFor(DivineSmelteryRecipe.DivineSmelteryRecipeType.INSTANCE, inventory, level);
 		
-		if (match.isPresent() && canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem())) {
-			return match.get().getResultItem().getItem();
+		if (match.isPresent() && canInsertAmountIntoOutputSlot(inventory, match.get().getResultItem()) && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem())) {
+			return match.get().getResultItem();
 		}
 				
 		return null;
@@ -208,8 +206,8 @@ public class DivineSmelteryBlockEntity extends BlockEntity implements MenuProvid
 		this.progress = 0;
 	}
 	
-	private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory) {
-		return inventory.getItem(OUTPUT_SLOT_NUMBER).getCount() + getBoostedOutputAmount(inventory.getItem(2)) < inventory.getItem(OUTPUT_SLOT_NUMBER).getMaxStackSize();
+	private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
+		return inventory.getItem(OUTPUT_SLOT_NUMBER).getCount() + output.getCount() * getBoostedOutputAmount(inventory.getItem(2)) < inventory.getItem(OUTPUT_SLOT_NUMBER).getMaxStackSize();
 	}
 	
 	private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
@@ -218,11 +216,11 @@ public class DivineSmelteryBlockEntity extends BlockEntity implements MenuProvid
 	
 	private static int getBoostedOutputAmount(ItemStack itemStack) {
 		if (itemStack.isEmpty())
-			return 0;
-		if (itemStack.is(ItemInit.DIVINE_BOOSTER_TIER_1.get())) 
 			return 1;
-		if (itemStack.is(ItemInit.DIVINE_BOOSTER_TIER_2.get())) 
+		if (itemStack.is(ItemInit.DIVINE_BOOSTER_TIER_1.get())) 
 			return 2;
-		return 0;
+		if (itemStack.is(ItemInit.DIVINE_BOOSTER_TIER_2.get())) 
+			return 3;
+		return 1;
 	}
 }
