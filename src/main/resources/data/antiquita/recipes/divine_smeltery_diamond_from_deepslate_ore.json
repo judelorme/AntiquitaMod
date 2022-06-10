@@ -1,0 +1,12 @@
+{
+	"type": "antiquita:divine_smeltery_recipes",
+	"ingredients": [
+		{
+			"item": "minecraft:deepslate_diamond_ore"
+		}
+	],
+	"output": {
+		"item": "minecraft:diamond",
+		"count": 2
+	}
+}

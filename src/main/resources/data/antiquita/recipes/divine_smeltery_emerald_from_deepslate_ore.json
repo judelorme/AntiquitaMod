@@ -1,0 +1,12 @@
+{
+	"type": "antiquita:divine_smeltery_recipes",
+	"ingredients": [
+		{
+			"item": "minecraft:deepslate_emerald_ore"
+		}
+	],
+	"output": {
+		"item": "minecraft:emerald",
+		"count": 2
+	}
+}

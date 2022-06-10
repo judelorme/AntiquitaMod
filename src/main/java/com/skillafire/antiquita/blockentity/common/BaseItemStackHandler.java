@@ -53,11 +53,7 @@ public class BaseItemStackHandler implements IItemHandler, IItemHandlerModifiabl
 
         ItemStack existing = this.stacks.get(slot);
         
-        if (existing.getCount() == 1 && ItemSlotTypesEnum.checkMaskEquals(stackTypes.get(slot), ItemSlotTypesEnum.UPGRADE)) {
-        	return stack;
-        }
-
-        int limit = ItemSlotTypesEnum.checkMaskEquals(stackTypes.get(slot), ItemSlotTypesEnum.UPGRADE) ? 1 : getStackLimit(slot, stack);
+        int limit = getStackLimit(slot, stack);
 
         if (!existing.isEmpty())
         {
@@ -158,6 +154,9 @@ public class BaseItemStackHandler implements IItemHandler, IItemHandlerModifiabl
 	
 	protected int getStackLimit(int slot, @Nonnull ItemStack stack)
     {
+		if (ItemSlotTypesEnum.checkMaskEquals(stackTypes.get(slot), ItemSlotTypesEnum.UPGRADE))
+			return 1;
+		
         return Math.min(getSlotLimit(slot), stack.getMaxStackSize());
     }
 	

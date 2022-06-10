@@ -17,6 +17,7 @@ public class ModTags {
 			return BlockTags.create(new ResourceLocation(Antiquita.MOD_ID, name));
 		}
 
+		@SuppressWarnings("unused")
 		private static TagKey<Block> forgeTag(String name) {
 			return BlockTags.create(new ResourceLocation("forge", name));
 		}
@@ -30,6 +31,7 @@ public class ModTags {
 			return ItemTags.create(new ResourceLocation(Antiquita.MOD_ID, name));
 		}
 
+		@SuppressWarnings("unused")
 		private static TagKey<Item> forgeTag(String name) {
 			return ItemTags.create(new ResourceLocation("forge", name));
 		}

@@ -1,0 +1,12 @@
+{
+	"type": "antiquita:divine_smeltery_recipes",
+	"ingredients": [
+		{
+			"item": "minecraft:lapis_ore"
+		}
+	],
+	"output": {
+		"item": "minecraft:lapis_lazuli",
+		"count": 2
+	}
+}
