@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:smelting",
+	"ingredient": {
+		"item": "antiquita:divine_fire_ore"
+	},
+	"result": "antiquita:divine_fire_powder",
+	"experience": 0.2,
+	"cookingtime": 200
+}

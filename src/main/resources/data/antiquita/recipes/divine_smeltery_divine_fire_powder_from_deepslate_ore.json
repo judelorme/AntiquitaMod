@@ -1,0 +1,12 @@
+{
+	"type": "antiquita:divine_smeltery_recipes",
+	"ingredients": [
+		{
+			"item": "antiquita:deepslate_divine_fire_ore"
+		}
+	],
+	"output": {
+		"item": "antiquita:divine_fire_powder",
+		"count": 4
+	}
+}

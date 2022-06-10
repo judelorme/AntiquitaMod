@@ -25,7 +25,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -207,7 +206,7 @@ public class DivineSmelteryBlockEntity extends BlockEntity implements MenuProvid
 	}
 	
 	private static boolean canInsertAmountIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
-		return inventory.getItem(OUTPUT_SLOT_NUMBER).getCount() + output.getCount() * getBoostedOutputAmount(inventory.getItem(2)) < inventory.getItem(OUTPUT_SLOT_NUMBER).getMaxStackSize();
+		return inventory.getItem(OUTPUT_SLOT_NUMBER).getCount() + output.getCount() * getBoostedOutputAmount(inventory.getItem(2)) <= inventory.getItem(OUTPUT_SLOT_NUMBER).getMaxStackSize();
 	}
 	
 	private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
