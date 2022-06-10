@@ -2,8 +2,6 @@ package com.skillafire.antiquita.screen.slot;
 
 import com.skillafire.antiquita.utils.ModTags;
 
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;

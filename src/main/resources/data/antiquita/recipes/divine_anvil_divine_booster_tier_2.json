@@ -1,0 +1,36 @@
+{
+	"type": "antiquita:divine_anvil_recipes",
+	"ingredients": [
+		{
+			"item": "minecraft:lapis_block"
+		},
+		{
+			"item": "minecraft:lapis_block"
+		},
+		{
+			"item": "minecraft:lapis_block"
+		},
+		{
+			"item": "antiquita:vanadium_block"
+		},
+		{
+			"item": "minecraft:netherite_ingot"
+		},
+		{
+			"item": "antiquita:vanadium_block"
+		},
+		{
+			"item": "minecraft:lapis_block"
+		},
+		{
+			"item": "minecraft:lapis_block"
+		},
+		{
+			"item": "minecraft:lapis_block"
+		}
+	],
+	"output": {
+		"item": "antiquita:divine_booster_tier_2",
+		"count": 1
+	}
+}

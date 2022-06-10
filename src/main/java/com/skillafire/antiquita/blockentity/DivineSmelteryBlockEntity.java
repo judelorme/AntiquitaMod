@@ -54,7 +54,7 @@ public class DivineSmelteryBlockEntity extends BlockEntity implements MenuProvid
 	{
 	    put(0, ItemSlotTypesEnum.INPUT | ItemSlotTypesEnum.ITEM);
 	    put(1, ItemSlotTypesEnum.INPUT | ItemSlotTypesEnum.ITEM);
-	    put(2, ItemSlotTypesEnum.INPUT | ItemSlotTypesEnum.ITEM);
+	    put(2, ItemSlotTypesEnum.INPUT | ItemSlotTypesEnum.ITEM | ItemSlotTypesEnum.UPGRADE);
 	    put(3, ItemSlotTypesEnum.OUTPUT | ItemSlotTypesEnum.ITEM);
 	}});
 	

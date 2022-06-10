@@ -24,7 +24,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -55,7 +54,12 @@ public class DivineAnvilBlockEntity extends BlockEntity implements MenuProvider 
 	    put(1, ItemSlotTypesEnum.INPUT | ItemSlotTypesEnum.ITEM);
 	    put(2, ItemSlotTypesEnum.INPUT | ItemSlotTypesEnum.ITEM);
 	    put(3, ItemSlotTypesEnum.INPUT | ItemSlotTypesEnum.ITEM);
-	    put(4, ItemSlotTypesEnum.OUTPUT | ItemSlotTypesEnum.ITEM);
+	    put(4, ItemSlotTypesEnum.INPUT | ItemSlotTypesEnum.ITEM);
+	    put(5, ItemSlotTypesEnum.INPUT | ItemSlotTypesEnum.ITEM);
+	    put(6, ItemSlotTypesEnum.INPUT | ItemSlotTypesEnum.ITEM);
+	    put(7, ItemSlotTypesEnum.INPUT | ItemSlotTypesEnum.ITEM);
+	    put(8, ItemSlotTypesEnum.INPUT | ItemSlotTypesEnum.ITEM);
+	    put(9, ItemSlotTypesEnum.OUTPUT | ItemSlotTypesEnum.ITEM);
 	}});
 	
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
@@ -158,7 +162,7 @@ public class DivineAnvilBlockEntity extends BlockEntity implements MenuProvider 
 	
 	public static void tick(Level level, BlockPos pos, BlockState blockState, DivineAnvilBlockEntity blockEntity) {
 		if (!level.isClientSide) {
-			Item outputItem = hasRecipe(blockEntity);
+			ItemStack outputItem = hasRecipe(blockEntity);
 			if (outputItem != null) {
 				blockEntity.progress++;
 				setChanged(level, pos, blockState);
@@ -172,16 +176,16 @@ public class DivineAnvilBlockEntity extends BlockEntity implements MenuProvider 
 		}
 	}
 		
-	private static void craftItem(DivineAnvilBlockEntity blockEntity, Item outputItem) {
+	private static void craftItem(DivineAnvilBlockEntity blockEntity, ItemStack outputItem) {
 		for (int i = 0; i < OUTPUT_SLOT_NUMBER; i++) {
 			blockEntity.capabilityWrapper.extractItem(i, 1, false);
 		}
 		
-		blockEntity.capabilityWrapper.setStackInSlot(OUTPUT_SLOT_NUMBER, new ItemStack(outputItem, blockEntity.capabilityWrapper.getStackInSlot(OUTPUT_SLOT_NUMBER).getCount() + 1));
+		blockEntity.capabilityWrapper.setStackInSlot(OUTPUT_SLOT_NUMBER, new ItemStack(outputItem.getItem(), blockEntity.capabilityWrapper.getStackInSlot(OUTPUT_SLOT_NUMBER).getCount() + outputItem.getCount()));
 		blockEntity.resetProgress();
 	}
 	
-	private static Item hasRecipe(DivineAnvilBlockEntity blockEntity) {
+	private static ItemStack hasRecipe(DivineAnvilBlockEntity blockEntity) {
 		Level level = blockEntity.level;
 		SimpleContainer inventory = new SimpleContainer(blockEntity.capabilityWrapper.getSlots());
 		
@@ -192,7 +196,7 @@ public class DivineAnvilBlockEntity extends BlockEntity implements MenuProvider 
 		Optional<DivineAnvilRecipe> match = level.getRecipeManager().getRecipeFor(DivineAnvilRecipe.DivineAnvilRecipeType.INSTANCE, inventory, level);
 		
 		if (match.isPresent() && canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem())) {
-			return match.get().getResultItem().getItem();
+			return match.get().getResultItem();
 		}
 				
 		return null;

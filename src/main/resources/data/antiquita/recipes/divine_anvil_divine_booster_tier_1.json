@@ -1,0 +1,36 @@
+{
+	"type": "antiquita:divine_anvil_recipes",
+	"ingredients": [
+		{
+			"item": "minecraft:lapis_lazuli"
+		},
+		{
+			"item": "minecraft:lapis_lazuli"
+		},
+		{
+			"item": "minecraft:lapis_lazuli"
+		},
+		{
+			"item": "minecraft:lapis_lazuli"
+		},
+		{
+			"item": "antiquita:terrestrum_alloy_block"
+		},
+		{
+			"item": "minecraft:lapis_lazuli"
+		},
+		{
+			"item": "minecraft:lapis_lazuli"
+		},
+		{
+			"item": "minecraft:lapis_lazuli"
+		},
+		{
+			"item": "minecraft:lapis_lazuli"
+		}
+	],
+	"output": {
+		"item": "antiquita:divine_booster_tier_1",
+		"count": 1
+	}
+}

@@ -52,8 +52,12 @@ public class BaseItemStackHandler implements IItemHandler, IItemHandlerModifiabl
         validateSlotIndex(slot);
 
         ItemStack existing = this.stacks.get(slot);
+        
+        if (existing.getCount() == 1 && ItemSlotTypesEnum.checkMaskEquals(stackTypes.get(slot), ItemSlotTypesEnum.UPGRADE)) {
+        	return stack;
+        }
 
-        int limit = getStackLimit(slot, stack);
+        int limit = ItemSlotTypesEnum.checkMaskEquals(stackTypes.get(slot), ItemSlotTypesEnum.UPGRADE) ? 1 : getStackLimit(slot, stack);
 
         if (!existing.isEmpty())
         {
