@@ -1,8 +1,11 @@
 package com.skillafire.antiquita.blockentity;
 
+import java.util.Random;
+
 import com.skillafire.antiquita.init.BlockEntityInit;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -23,6 +26,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition.Builder;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
@@ -33,12 +37,14 @@ import net.minecraftforge.network.NetworkHooks;
 
 public class DivineSmeltery extends BaseEntityBlock {
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+	public static final BooleanProperty BLAZING = BooleanProperty.create("blazing");
 
 	public static final Properties props = BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_GREEN)
 			.strength(1.0f).sound(SoundType.METAL).noOcclusion();
 
 	public DivineSmeltery() {
 		super(props);
+		this.registerDefaultState(this.stateDefinition.any().setValue(BLAZING, Boolean.valueOf(false)));
 	}
 
 	private static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 12, 16);
@@ -69,7 +75,7 @@ public class DivineSmeltery extends BaseEntityBlock {
 
 	@Override
 	protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
-		builder.add(FACING);
+		builder.add(FACING, BLAZING);
 	}
 
 	@Override
@@ -115,5 +121,13 @@ public class DivineSmeltery extends BaseEntityBlock {
 			BlockEntityType<T> blockEntityType) {
 		return createTickerHelper(blockEntityType, BlockEntityInit.DIVINE_SMELTERY_BLOCK_ENTITY.get(),
 				DivineSmelteryBlockEntity::tick);
+	}
+	
+	@Override
+	public void animateTick(BlockState blockState, Level level, BlockPos pos, Random rand) {
+		if (blockState.getValue(BLAZING)) {
+			level.addParticle(ParticleTypes.FLAME, pos.getX() + 0.5f, pos.getY() + 0.8f, pos.getZ() + 0.5f, 0.0D, 0.0D, 0.0D);
+			return;
+		}
 	}
 }
