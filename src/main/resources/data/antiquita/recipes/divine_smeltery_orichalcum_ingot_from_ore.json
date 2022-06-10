@@ -1,0 +1,12 @@
+{
+	"type": "antiquita:divine_smeltery_recipes",
+	"ingredients": [
+		{
+			"item": "antiquita:orichalcum_ore"
+		}
+	],
+	"output": {
+		"item": "antiquita:orichalcum_ingot",
+		"count": 2
+	}
+}

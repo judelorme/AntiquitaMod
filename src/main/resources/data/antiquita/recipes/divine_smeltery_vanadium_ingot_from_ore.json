@@ -1,0 +1,12 @@
+{
+	"type": "antiquita:divine_smeltery_recipes",
+	"ingredients": [
+		{
+			"item": "antiquita:vanadium_ore"
+		}
+	],
+	"output": {
+		"item": "antiquita:vanadium_ingot",
+		"count": 2
+	}
+}

@@ -2,31 +2,31 @@
 	"type": "antiquita:divine_anvil_recipes",
 	"ingredients": [
 		{
-			"item": "minecraft:lapis_lazuli"
+			"item": "minecraft:lapis_block"
 		},
 		{
-			"item": "minecraft:lapis_lazuli"
+			"item": "minecraft:lapis_block"
 		},
 		{
-			"item": "minecraft:lapis_lazuli"
+			"item": "minecraft:lapis_block"
 		},
 		{
-			"item": "minecraft:lapis_lazuli"
+			"item": "minecraft:lapis_block"
 		},
 		{
-			"item": "antiquita:terrestrum_alloy_block"
+			"item": "antiquita:vanadium_block"
 		},
 		{
-			"item": "minecraft:lapis_lazuli"
+			"item": "minecraft:lapis_block"
 		},
 		{
-			"item": "minecraft:lapis_lazuli"
+			"item": "minecraft:lapis_block"
 		},
 		{
-			"item": "minecraft:lapis_lazuli"
+			"item": "minecraft:lapis_block"
 		},
 		{
-			"item": "minecraft:lapis_lazuli"
+			"item": "minecraft:lapis_block"
 		}
 	],
 	"output": {
