@@ -55,6 +55,9 @@ public class Antiquita {
 	}
 	
 	private void clientSetup(final FMLClientSetupEvent event) {
+		// Crops
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.SORGHUM_PLANT.get(), RenderType.cutout());
+		
 		// Flowers
 		/*ItemBlockRenderTypes.setRenderLayer(BlockInit.STARGONIA_FLOWER.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.POTTED_STARGONIA_FLOWER.get(), RenderType.cutout());*/

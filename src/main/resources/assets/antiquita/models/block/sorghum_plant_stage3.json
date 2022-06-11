@@ -1,0 +1,6 @@
+{
+	"parent": "block/crop",
+	"textures": {
+		"crop": "antiquita:block/sorghum_stage3"
+	}
+}

@@ -9,6 +9,7 @@ import com.skillafire.antiquita.block.DeepslateOrichalcumOre;
 import com.skillafire.antiquita.block.DeepslateVanadiumOre;
 import com.skillafire.antiquita.block.DivineFireOre;
 import com.skillafire.antiquita.block.OrichalcumOre;
+import com.skillafire.antiquita.block.SorghumPlantBlock;
 import com.skillafire.antiquita.block.VanadiumOre;
 import com.skillafire.antiquita.blockentity.DivineAnvil;
 import com.skillafire.antiquita.blockentity.DivineFurnace;
@@ -156,6 +157,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> DIVINE_SMELTERY = registerWithBlockItem("divine_smeltery", 
 			() -> new DivineSmeltery(), 
 			object -> () -> new BlockItem(object.get(), new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
+	
+	// Crops
+	public static final RegistryObject<Block> SORGHUM_PLANT = registerWithoutBlockItem("sorghum_plant", 
+			() -> new SorghumPlantBlock());
 	
 	/*public static final RegistryObject<Block> SKY_FURNACE = registerWithBlockItem("sky_furnace", 
 			() -> new SkyFurnace(), 

@@ -8,6 +8,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.SwordItem;
@@ -31,6 +32,10 @@ public class ItemInit {
 
 	public static final RegistryObject<Item> DIVINE_BOOSTER_TIER_1 = register("divine_booster_tier_1", () -> new Item(new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
 	public static final RegistryObject<Item> DIVINE_BOOSTER_TIER_2 = register("divine_booster_tier_2", () -> new Item(new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
+	
+	public static final RegistryObject<Item> SORGHUM_SEEDS = register("sorghum_seeds", () -> new ItemNameBlockItem(BlockInit.SORGHUM_PLANT.get(), new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
+	public static final RegistryObject<Item> SORGHUM = register("sorghum", () -> new Item(new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
+	
 	// Tools
 	/*public static final RegistryObject<PickaxeItem> KAMACITE_PICKAXE = register("kamacite_pickaxe", () -> new PickaxeItem(TierInit.KAMACITE, 0, 0f, new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));
 	public static final RegistryObject<AxeItem> KAMACITE_AXE = register("kamacite_axe", () -> new AxeItem(TierInit.KAMACITE, 0, 0f, new Item.Properties().tab(Antiquita.ANTIQUITA_TAB)));

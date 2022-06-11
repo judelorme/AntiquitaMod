@@ -1,0 +1,10 @@
+{
+	"conditions": [
+		{
+			"condition": "block_state_property",
+			"loot_table_id": "minecraft:grass"
+		}
+	],
+	"addition": "antiquita:sorghum_seeds",
+	"type": "antiquita:sorghum_seeds_from_grass"
+}

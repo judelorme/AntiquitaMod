@@ -25,5 +25,9 @@
 	"block.antiquita.divine_smeltery": "Fonderie Divine",
 	
 	"item.antiquita.divine_booster_tier_1": "Augmentation Divine I",	
-	"item.antiquita.divine_booster_tier_2": "Augmentation Divine II"
+	"item.antiquita.divine_booster_tier_2": "Augmentation Divine II",
+	
+	"item.antiquita.sorghum_seeds": "Graines de Sorgho",
+	"block.antiquita.sorghum_plant": "Sorgho",
+	"item.antiquita.sorghum": "Sorgho"
 }

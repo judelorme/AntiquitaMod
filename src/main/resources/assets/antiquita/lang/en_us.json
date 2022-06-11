@@ -25,5 +25,9 @@
 	"block.antiquita.divine_smeltery": "Divine Smeltery",
 	
 	"item.antiquita.divine_booster_tier_1": "Divine Booster I",
-	"item.antiquita.divine_booster_tier_2": "Divine Booster II"
+	"item.antiquita.divine_booster_tier_2": "Divine Booster II",
+	
+	"item.antiquita.sorghum_seeds": "Sorghum Seeds",
+	"block.antiquita.sorghum_plant": "Sorghum",
+	"item.antiquita.sorghum": "Sorghum"
 }
