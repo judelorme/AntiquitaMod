@@ -3,7 +3,7 @@ package com.skillafire.antiquita.event;
 import javax.annotation.Nonnull;
 
 import com.skillafire.antiquita.Antiquita;
-import com.skillafire.antiquita.event.loot.SorghumSeedsFromGrassModifier;
+import com.skillafire.antiquita.event.loot.SorghumSeedsFromGrassAdditionModifier;
 import com.skillafire.antiquita.init.BlockEntityInit;
 import com.skillafire.antiquita.renderer.DivineFurnaceRenderer;
 
@@ -23,6 +23,7 @@ public class ModEventBusEvents {
 	
 	@SubscribeEvent
     public static void registerModifierSerializers(@Nonnull final RegistryEvent.Register<GlobalLootModifierSerializer<?>> event) {
-        event.getRegistry().registerAll(new SorghumSeedsFromGrassModifier.Serializer().setRegistryName(Antiquita.MOD_ID, "sorghum_seeds_from_grass"));
+		System.out.println("Registering loot table for sorghum seeds.");
+        event.getRegistry().registerAll(new SorghumSeedsFromGrassAdditionModifier.Serializer().setRegistryName(Antiquita.MOD_ID, "sorghum_seeds_from_grass"));
     }
 }
